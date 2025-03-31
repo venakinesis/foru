@@ -1,0 +1,158 @@
+.playlistContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #000;
+	color: #fff;
+	padding: 2rem;
+	text-align: center;
+	font-family: 'Arial', sans-serif;
+}
+
+.playlistTitle {
+	font-size: 2.5rem;
+	margin-bottom: 3rem;
+	color: #a10101;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.track {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.8rem;
+	max-width: 400px;
+	width: 100%;
+}
+
+.albumCover {
+	width: 280px;
+	height: 280px;
+	border-radius: 10px;
+	object-fit: cover;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+	transition: transform 0.3s ease;
+}
+
+.albumCover:hover {
+	transform: scale(1.02);
+}
+
+.songInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.songTitle {
+	font-size: 1.8rem;
+	margin: 0;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+}
+
+.artist {
+	font-size: 1.4rem;
+	color: #a10101;
+	margin: 0;
+	font-style: italic;
+}
+
+.playButton {
+	background: linear-gradient(145deg, #a10101, #5b0202);
+	color: #000;
+	border: none;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	font-size: 1.8rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 20px #a10101;
+	margin-top: 1rem;
+}
+
+.playButton:hover {
+	transform: scale(1.08);
+	box-shadow: 0 6px 25px #a10101;
+}
+
+.playButton:active {
+	transform: scale(0.98);
+}
+
+.playIcon,
+.pauseIcon {
+	display: inline-block;
+	margin-left: 3px;
+}
+
+@media (max-width: 600px) {
+	.playlistTitle {
+		font-size: 2rem;
+	}
+
+	.albumCover {
+		width: 220px;
+		height: 220px;
+	}
+
+	.songTitle {
+		font-size: 1.5rem;
+	}
+
+	.artist {
+		font-size: 1.2rem;
+	}
+
+	.playButton {
+		width: 60px;
+		height: 60px;
+		font-size: 1.5rem;
+	}
+}
+
+.backButton {
+	background: linear-gradient(45deg, #a10101, #5b0606);
+	color: white;
+	border: none;
+	margin-top: 30px;
+	padding: 15px 30px;
+	border-radius: 30px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 15px rgba(161, 1, 1, 0.3);
+	position: relative;
+	overflow: hidden;
+}
+
+.backButton:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 20px rgba(161, 1, 1, 0.5);
+}
+
+.backButton::after {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(transparent,
+			rgba(255, 255, 255, 0.1),
+			transparent);
+	transform: rotate(45deg);
+	transition: all 0.5s;
+}
+
+.backButton:hover::after {
+	left: 100%;
+}
